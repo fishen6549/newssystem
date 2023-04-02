@@ -68,3 +68,28 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### 一些命令
+- 项目demo https://gitee.com/tyl-lsm/news-ui?_from=gitee_search
+- npx create-react-app newssystem
+- cnpm i sass 要使用sass的话要安装sass
+- 配置反向代理 创建 src/setupProxy.js 安装中间件 http-proxy-middleware
+
+### react-router-dom@6
+- react-router-dom6.x版本中，不再通过component指定组件，通过element进行配置。因此将<Route>中的component改为element即可
+- 路由守卫也写法也不一样  <Route path="/" element={ localStorage.getItem("token") ? <NewsSandBox /> : <Navigate to="/login" /> } ></Route>
+- 嵌套路由参考 https://zhuanlan.zhihu.com/p/474568055
+
+### json-server 接口模拟
+- npm install -g json-server
+- 创建一个json文件 json-server --watch db.json
+- put:会将修改的数据全部替换； patch:只会修改数据的某一部分；
+
+### 受控非受控
+- 受控非受控组件 受控: 外部状态改变了内部能相应改变  非受控: 第一次受到影响后面不会再改变 
+- antd 组件属性中 前面写了 default 的是非受控 想要变成受控就要看看有没有去掉default的属性
+
+### useState
+-  set之后会把会把render函数重新执行一遍 而useEffect看依赖的值有没有变化
+-  如果有依赖的值且变化了 才会再执行一遍
+             
